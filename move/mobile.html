@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>赠送</title>
+	<link rel="stylesheet" href="css/wx_zs.css">
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<form action="">
+		<div>
+			<div class="comm-head clear">
+					<img src="images/toubu_03.png" alt="" class="left">
+					<p class="left">|&nbsp;&nbsp;&nbsp;特色馆</p>
+					<img src="images/toubu_05.png" alt="" class="right">
+			</div>
+
+			<div class="zs_head">
+				<p class="zs_my_msg">有钱！任性！送礼物我开心~嘻嘻</p>
+				<a href="javascript:;"><img src="images/zs_03.png" alt=""/></a>
+				<p class="zs_my_giv">有<span>1</span>份礼物正在派送。。。</p>
+				<span class="zs_triangle"><img src="images/zs_07.png" alt=""></span>
+			</div>
+
+			<div class="zs_title zs_bottom">
+				派送礼物
+			</div>
+
+			<div class="zs_section clear zs_bottom">
+				<img src="images/zs_11.png" alt="">
+				<div class="sec_text">
+					<p>大闸蟹 2.6~2.9两 8只全母蟹</p>
+					<p class="font-orange font-big">￥468.00</p>
+					<p>共<span class="font-red">1</span>份</p>
+				</div>
+			</div>
+
+			<div class="zs_title zs_bottom">
+				选择赠送人
+			</div>
+
+			<div class="zs_infor zs_bottom">
+				<!--标题 不能动-->
+				<ul class="clear zs_infor_one">
+					<li class="zs_name">姓名</li>
+					<li class="zs_phone">电话</li>
+					<li class="zs_address">地址</li>
+					<li class="zs_choose">选择</li>
+				</ul>
+
+			
+				<!--内容 可以换-->
+				<ul class="clear zs_infor_two">
+					<li class="zs_name">王小二</li>
+					<li class="zs_phone">16800000000</li>
+					<li class="zs_address">北京市房山区</li>
+					<li class="zs_choose"><input type="radio"></li>
+				</ul>
+				<ul class="clear zs_infor_two">
+					<li class="zs_name">王小二</li>
+					<li class="zs_phone">16800000000</li>
+					<li class="zs_address">北京市房山区</li>
+					<li class="zs_choose"><input type="radio"></li>
+				</ul>
+				<ul class="clear zs_infor_two">
+					<li class="zs_name">王小二</li>
+					<li class="zs_phone">16800000000</li>
+					<li class="zs_address">北京市房山区</li>
+					<li class="zs_choose"><input type="radio"></li>
+				</ul>
+				<ul class="clear zs_infor_two">
+					<li class="zs_name">王小二</li>
+					<li class="zs_phone">16800000000</li>
+					<li class="zs_address">北京市房山区</li>
+					<li class="zs_choose"><input type="radio"></li>
+				</ul>
+			</div>
+
+			<div class="zs_foot">
+				<input type="button" id="zs_btn_one" class="zs_btn_one" value="确认"></button>
+				<input type="button" id="zs_btn_two" class="zs_btn_two" value="取消"></button>
+			</div>
+			
+			<div class="zs_max clear" id="zs_max">
+				<div class="zs_fix">
+					<p>您是否已确定赠送人</p>
+					<input type="button" class="fix_btn_one" value="是" id="fix_btn_one"></button>
+					<!-- <button type="text" class="fix_btn_one" >是</button> -->
+					<input type="button" class="fix_btn_two" id="fix_btn_two" value="否"></button>
+					<!-- <button type="text" class="fix_btn_two" id="fix_btn_two">否</button> -->
+				</div>
+			</div>
+
+		</div>
+	</form>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script>
+		$("#zs_btn_one").click(function(){
+			$("#zs_max").css("display",'block');
+		});
+		$("#fix_btn_two").click(function(){
+			$("#zs_max").css("display",'none');
+		});
+	</script>
+</body>
+</html>

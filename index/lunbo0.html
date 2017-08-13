@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>动画轮播</title>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+#wrapper{
+	margin:0 auto;
+
+}
+
+</style>
+ </head>
+ <body>
+ <div id="wrapper">
+	<img src="image/red.png" alt=""id="img" />
+</div>
+   <script type="text/javascript">
+	var curIndex=0;
+	var arr=new Array();
+	arr[0]="image/red.png";
+	arr[1]="image/orange.png"
+	arr[2]="image/yellow.png";
+	arr[3]="image/green.png";
+	arr[4]="image/33FFAA.png";
+	arr[5]="image/blue.png";
+	arr[6]="image/purple.png";
+	setInterval(changeImg,1000);
+function changeImg(){
+	var obj=document.getElementById('img');
+if(curIndex==arr.length-1){
+	curIndex=0;
+}else{
+	curIndex+=1;
+}
+obj.src=arr[curIndex];
+}
+	</script>
+ </body>
+</html>
+
+
+
+
+ 

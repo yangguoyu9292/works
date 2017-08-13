@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Y前端作品</title>
+ </head>
+<style type="text/css">
+	*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", Heiti, "黑体", sans-serif;
+}
+h2,a{
+	text-decoration:none;
+	font-size:22px;
+    line-height:2.7;  
+}
+.main{
+	width: 540px;
+    box-sizing: border-box;
+    padding: 80px;
+    margin: 20px auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #ccc;
+}
+.wrap-list{
+	margin-left:20px;
+}
+.wrap-list>a{
+	display:block;
+}
+.wrap-title{
+	cursor:pointer;
+	background-color:#EAEAEA;
+	border-radius:10px;
+	margin-bottom:5px;
+}
+@-webkit-keyframes shake {
+      0%{
+          -webkit-transform:translate(2px, 2px);
+      }
+      25%{
+          -webkit-transform:translate(-2px, -2px);
+      }
+      50%{
+         -webkit-transform:translate(0px, 0px);
+     }
+    75%{
+        -webkit-transform:translate(2px, -2px);
+  }
+     100%{
+        -webkit-transform:translate(-2px, 2px);
+     }
+ }
+.wrap-title:hover{
+    -webkit-animation:shake 0.2s infinite;
+    animation:shake 0.2s infinite;
+ }
+</style>
+ <body>
+    <div class="main">
+		<div id="wrap">
+			<h2 class="wrap-title">一、图片轮播效果</h2>
+				<div class="wrap-list"style="display:none;">
+					<a href="index/lunbo0.html" target="_blank">数组实现图片轮播</a>
+					<a href="index/lunbo1.html" target="_blank">轮播图无缝滚动</a>
+					<a href="index/lunbo2.html" target="_blank">轮播图淡入淡出效果</a>
+					<a href="index/lunbo3.html" target="_blank">旋转木马</a>
+				</div>
+		</div>
+		<div id="wrap">
+			<h2 class="wrap-title">二、表单</h2>
+				<div class="wrap-list"style="display:none;">
+					<a href="index/二级联动.html" target="_blank">二级菜单</a>
+					<a href="index/select.html" target="_blank">多级联动菜单</a>
+				</div>
+		</div>
+		<div id="wrap">
+			<h2 class="wrap-title">三、模仿的网站</h2>
+				<div class="wrap-list"style="display:none;">
+					<a href="https://yangguoyu9292.github.io/move/mobile.html">移动端页面</a>
+					<a href="
+https://yangguoyu9292.github.io/test/xkw.html" target="_blank">学科网</a>
+					<a href="https://yangguoyu9292.github.io/cake/index.html" target="_blank">蛋糕商城</a>
+					<a href="https://yangguoyu9292.github.io/hehe/resume.html" target="_blank">简单resume</a>
+				</div>
+		</div>
+		<div id="wrap">
+			<h2 class="wrap-title">四、奇技淫巧</h2>
+				<div class="wrap-list"style="display:none;">
+					<a href="index/太极图.html" target="_blank">CSS太极图</a>
+					<a href="index/winnower.html" target="_blank">CSS风车</a>
+					
+				</div>
+		</div>
+		
+		
+	</div>
+	<script src="jq/jquery-1.11.3.js"></script>
+	<script type="text/javascript">
+		$('#wrap h2').click(function(){
+        var idx = $(this).index('#wrap h2');
+        $('.wrap-list').eq(idx).toggle();
+        $('.wrap-list').not( $('.wrap-list').eq(idx)).hide();
+    });
+	</script>
+ </body>
+</html>

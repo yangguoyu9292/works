@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+<style type="text/css">
+ .taiji{
+ position:relative;
+width:46px;
+height:96px;
+background:#fff;
+border:2px solid #000;
+border-width:2px 50px 2px 2px;
+border-radius:50%;
+}
+.white{
+	position:absolute;
+	top:0;
+	left:50%;
+	background:#fff;
+	width:48px;
+	height:48px;
+	border-radius:50%;
+}
+.black{
+	position:absolute;
+	top:50%;
+	left:50%;
+	background:#000;
+	width:48px;
+	height:48px;
+	border-radius:50%;
+}
+.white::after{
+	content:"";
+	position:absolute;
+	top:17px;
+	left:17px;
+	background:#000;
+	border-radius:50%;
+	width:16px;
+	height:16px;
+}
+.black::after{
+	content:"";
+	position:absolute;
+	top:17px;
+	left:17px;
+	background:#fff;
+	border-radius:50%;
+	width:16px;
+	height:16px;
+}
+</style>
+ </head>
+ <body>
+<div class="taiji">
+	<div class="white"></div>
+	<div class="black"></div>
+</div>
+ </body>
+</html>

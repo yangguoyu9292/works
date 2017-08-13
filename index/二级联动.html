@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>二级联动</title>
+ </head>
+ <body>
+   <fieldset>
+<legend>用户注册页面</legend>
+ <form>
+	<table>
+		<tr>
+			<td>用户名:</td>
+			<td><input type="text"name='user' /></td>
+		</tr>
+		<tr>
+			<td>密码:</td>
+			<td><input type="password"name='pwd' /></td>
+		</tr>
+		<tr>
+			<td>确定密码:</td>
+			<td><input type="password"name='rpwd' /></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type="email"name='mail' /></td>
+		</tr>
+		<tr>
+			<td>籍贯:</td>
+			<td>
+				<select id='province'>
+					<option>请选择</option>
+					<option>北京市</option>
+					<option>辽宁省</option>
+					<option>山东省</option>
+				</select>
+				<select id="city">
+					<option>请选择</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit"value='注册' /></td>
+		</tr>
+	</table>
+</form>
+	</fieldset>  
+<script>
+ var provinceElement=document.getElementById('province');
+ provinceElement.onchange=function(){
+ var cityElement=document.getElementById('city');
+var opts=cityElement.getElementsByTagName('option');
+for(var z=1;z<opts.length;z++){
+	cityElement.removeChild(opts[z]);
+z--;
+}
+
+
+
+	var provinceValue=provinceElement.value;
+	var cities;
+switch(provinceValue){
+case'北京市':
+		cities=['房山区','大兴区','丰台区','海淀区','朝阳区'];
+		break;
+	case'辽宁省':
+		cities=['1市','2市','3市','4市','5市'];
+		break;
+	case'山东省':
+		cities=['11市','22市','33市','44市','55市'];
+		break;
+}
+for(var i=0;i<cities.length;i++){
+	var city=cities[i];
+	var option=document.createElement('option');
+var textNode=document.createTextNode(city);
+option.appendChild(textNode);
+
+cityElement.appendChild(option);
+	
+}
+}
+</script>
+ </body>
+</html>

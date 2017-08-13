@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+<meta charset="UTF-8">
+  <title> new document </title>
+  <script>
+	var categories=[
+{"id":10,"name":"男装","children":[
+	{"id":101,"name":"正装"},
+	{"id":102,"name":"T桖"},
+	{"id":103,"name":"裤衩"}
+]},
+{"id":20,"name":"女装","children":[
+	{"id":201,"name":"短裙"},
+	{"id":202,"name":"连衣裙"},
+	{"id":203,"name":"裤子","children":[
+		{"id":2031,"name":"长裤"},
+		{"id":2031,"name":"九分裤"},
+		{"id":2031,"name":"七分裤"}
+	]},
+]},
+
+{"id":30,"name":"童装","children":[
+	{"id":301,"name":"帽子"},
+	{"id":302,"name":"套装","children":[
+		{"id":3021,"name":"0-3岁"},
+		{"id":3021,"name":"3-6岁"},
+		{"id":3021,"name":"6-9岁"}
+	]},	
+	{"id":303,"name":'手套'}
+]}
+];
+
+	function createSelect(arr){//根据给定数组创建select
+//创建空select元素，保存在变量sel中
+var sel=document.createElement("select");
+//在sel中增加第一个option元素，内容为"-请选择-"
+sel.add(new Option("-请选择-"));
+//遍历arr数组中每个商品类别对象
+for(var i=0;i<arr.length;i++){
+	//在sel中增加一个Option,内容为当前对象的name属性值,value为当前对象的id值
+sel.add(new Option(arr[i].name,arr[i].id));
+}
+/*给sel绑定onchange事件*/
+sel.onchange=function(){//JS动态绑定事件
+//事件函数的this，就指当前select对象
+	//删除当前select之后的所有兄弟select
+while(this.nextSibling!=null){
+	this.nextSibling.parentNode.removeChild(this.nextSibling)
+};
+
+
+//获得当前选项中下标-1修正,保存在变量i中
+var i=this.selectedIndex-1;
+//如果i不等于-1//说明选得不是"请选择"
+if(i!=-1){
+//如果arr中i位置对象的children属性有效
+if(arr[i].children){
+//再次调用createSelect方法,传入i位置对象的children数组(继续创建下级select)s
+createSelect(arr[i].children);
+	}
+}
+}
+
+
+//找到id为category的div,追加sel
+document.getElementById("category")
+		.appendChild(sel);
+		
+}
+window.onload=function(){
+createSelect(categories);
+}
+
+
+</script>
+ </head>
+
+ <body>
+ <div id="category"></div>
+ </body>
+</html>
